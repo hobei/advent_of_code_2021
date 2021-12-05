@@ -73,7 +73,7 @@ Note : When offsetting the second vector, I set the first element to the same as
 ## To Run
 
 1. You will need to have activate the Poplar SDK
-2. Compile using `day1$ g++ --std=c++11 day1.cpp -lpoplar -lpopops -lpoputil -o day1`
-3. Run `./day1`
-4. To run with profiling `POPLAR_ENGINE_OPTIONS='{"autoReport.all":"true"}' ./day1`
+2. Compile using `make`
+3. Run `./out`
+4. To run with profiling `POPLAR_ENGINE_OPTIONS='{"autoReport.all":"true"}' ./out`
 
