@@ -71,10 +71,3 @@ Note : When offsetting the second vector, I set the first element to the same as
 2. Compile using `day1$ g++ --std=c++11 day1.cpp -lpoplar -lpopops -lpoputil -o day1`
 3. Run `./day1`
 4. To run with profiling `POPLAR_ENGINE_OPTIONS='{"autoReport.all":"true"}' ./day1`
-
-## TODO 
-
-1. Workout how to clone and rotate the orginal data rather than have to create a copy
-2. Workout how to add a `zero` constant and broadcast it to the desired size
-3. Workout how to replace the constant with data streamed into the IPU
-4. Workout how to read the data from the IPU rather than using a print program

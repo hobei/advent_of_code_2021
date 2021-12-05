@@ -41,7 +41,19 @@ In this example, there are 5 sums that are larger than the previous sum.
 Consider sums of a three-measurement sliding window. How many sums are larger than the previous sum?
 ## Approach
 
-For this question I am going to read in the input data (data.txt) and then map it across the tiles of the ipu as a vector. I am fact going to create two vectors with the second one offset by 1.
+For this question I am going to read in the input data (data.txt) and then map it across the tiles of the ipu of column 1 of a matrix of shape {numValue, 3}.
+
+Then I will copy the first column to the the 2nd and 3rd column and shifting the values by 1. So I will end up with the following matrix
+
+```
+A B C
+B C D
+C D E
+D E 0
+E 0 0
+```
+
+Then I will reduce the matrix to a vector by summing the rows. Then I will take that vector and create another vector offset by 1
 
 I am then going to subtract one vector from the other and determine which values are greater than 0. Then sum the values to work out the number of increasing measurements
 
@@ -65,9 +77,3 @@ Note : When offsetting the second vector, I set the first element to the same as
 3. Run `./day1`
 4. To run with profiling `POPLAR_ENGINE_OPTIONS='{"autoReport.all":"true"}' ./day1`
 
-## TODO 
-
-1. Workout how to clone and rotate the orginal data rather than have to create a copy
-2. Workout how to add a `zero` constant and broadcast it to the desired size
-3. Workout how to replace the constant with data streamed into the IPU
-4. Workout how to read the data from the IPU rather than using a print program
