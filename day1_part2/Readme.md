@@ -1,6 +1,6 @@
-# Day 1
+# Day 1 Part 2
 
-## Question : Sonar Sweep - Part 2
+## Question : Sonar Sweep
 
 Considering every single measurement isn't as useful as you expected: there's just too much noise in the data.
 
