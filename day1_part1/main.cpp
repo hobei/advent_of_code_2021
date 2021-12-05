@@ -119,6 +119,7 @@ int main()
 
   // 
   // Connect the streams to the data on the host
+  //
   engine.connectStream("data", values.data());
   engine.connectStream("result", result.data());
 
