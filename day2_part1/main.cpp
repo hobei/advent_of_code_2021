@@ -113,10 +113,10 @@ int main()
   //
   // Create top level program which copies data onto the IPU, run the algorithm and copies the data of the ipu
   //
-  auto toplevelProg = Sequence(Copy(inputHStream, inputHCommandsTensor), 
+  auto toplevelProg = Sequence({Copy(inputHStream, inputHCommandsTensor), 
                                Copy(inputVStream, inputVCommandsTensor), 
                                algorithm, 
-                               Copy(resultTensor, outputStream));
+                               Copy(resultTensor, outputStream)});
 
   // 
   // Create the engine and run the program

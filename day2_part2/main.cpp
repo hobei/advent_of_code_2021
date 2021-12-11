@@ -124,10 +124,10 @@ int main()
   // Create top level program which copies data onto the IPU, run the algorithm and copies the data of the ipu
   // We are going to copy the forward values into the first column and the aim values in the second
   //
-  auto toplevelProg = Sequence(Copy(inputHStream, inputTensor.slice(0, 1, 1).flatten()), 
+  auto toplevelProg = Sequence({Copy(inputHStream, inputTensor.slice(0, 1, 1).flatten()), 
                                Copy(inputAStream, inputTensor.slice(1, 2, 1).flatten()),
                                algorithm,
-                               Copy(resultTensor, outputStream));
+                               Copy(resultTensor, outputStream)});
 
   // 
   // Create the engine and run the program

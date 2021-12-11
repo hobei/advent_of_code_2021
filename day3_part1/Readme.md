@@ -37,10 +37,27 @@ Use the binary numbers in your diagnostic report to calculate the gamma rate and
 
 ## Approach
 
-As the IPU does not support strings we will cheat a little and convert the commands into two vectors for forward commands
-and depth commands.
+For this question we will first read the data into a 2d matrix.
 
-Then we just need to sum the vectors and multiple the results.
+Then we will convert the input data of 0's and 1's into -1's and 1's
+
+```
+00100
+11110
+10110
+```
+to
+```
+-1 -1  1 -1 -1
+ 1  1  1  1 -1
+ 1 -1  1  1 -1
+```
+
+We can then reduce the columns to get a positive or negative value which we can then to a comparison with 0 to get a bitmap
+
+One we have the bit map we can multiple it by powers of two and sum them for gamma
+
+For epsilon we need to invert the bitmap and then multiple it by powers of two and sum them
 
 ## To Run
 
